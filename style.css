@@ -19,7 +19,7 @@ header {
     color: white;
     text-align: center;
     font-style: italic;
-    margin-bottom: 400px;
+    margin-bottom: 100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 header h1 {
@@ -133,6 +133,12 @@ nav .links a:hover {
    }
 }
 @media (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+
+}
+@media (max-width: 768px) {
     header h1 {
         font-size: 28px
     }
@@ -192,7 +198,7 @@ p, ul {
     grid-template-rows:repeat(auto-fit, minmax(600px, 1fr)) ;
     gap: 40px;
     margin: 40px;
-    margin-bottom: 600px;
+    margin-bottom: 100px;
     /* remove fixed min-width/height so it shrinks to content */
 }
 .item{
@@ -405,7 +411,7 @@ footer div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
 }
 footer h2 {
@@ -472,6 +478,16 @@ footer p {
     font-size:1.6em;
     word-spacing: 4px;
 }
+.menu {
+position: relative;
+}
+.menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+}
 .menu-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -526,7 +542,7 @@ content: "";
     grid-template-rows:repeat(auto-fit, minmax(600px, 1fr)) ;
     gap: 40px;
     margin: 40px;
-    margin-bottom: 600px;
+    margin-bottom: 100px;
 }
 .vip button {
      gap:20px;
@@ -548,4 +564,53 @@ content: "";
     color: #8A2BE2;
     transform: scale(1.1) translateY(-6px);
     box-shadow: 0 4px 8px #00E5FF;
+}
+.message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 229, 255, 0.9);
+    color: #8A2BE2;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #00E5FF;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1000;
+}
+.order-counter {
+    opacity: 0;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    background-color: rgba(0, 229, 255, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #00E5FF;
+    z-index: 1000;
+}
+.drink button {
+      font-size: 1.2em;
+    border: none;
+ color: white;
+  text-shadow: 2px 2px 4px #8A2BE2;
+    cursor: pointer;
+    background-color:#00E5FF;
+    font-style: italic;
+    height: auto;
+    padding: 12px 24px;
+    border-radius: 20px;
+    margin: 20px;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.drink button:hover {
+      background-color:#00E5FF;
+    color: #8A2BE2;
+    transform: scale(1.1) translateY(-6px);
+    box-shadow: 0 4px 8px #00E5FF; 
 }
