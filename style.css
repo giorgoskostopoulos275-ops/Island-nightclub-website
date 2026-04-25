@@ -1,12 +1,21 @@
 html {
     scroll-behavior: smooth;
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 body {
     background: linear-gradient(135deg, #0A0F2C, #1A1F4D, #6A0DAD);
 margin: 0;
 }
 .about {
-    margin-bottom: 100px; 
+   margin-bottom: 100px; 
+}
+
+nav .links a {
+    margin: 0;
 }
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('night-landscape-with-palm-trees-against-the-backdrop-of-a-neon-sunset-stars-silhouette-coconut-palm-trees-on-beach-at-sunset-vintage-tone-futuristic-landscape-neon-palm-tree-tropical-sunset-700-20926.jpg');
@@ -213,9 +222,8 @@ p, ul {
 .best {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows:repeat(auto-fit, minmax(600px, 1fr)) ;
     gap: 40px;
-    margin: 40px;
+   padding: 40px;
     margin-bottom: 100px;
     /* remove fixed min-width/height so it shrinks to content */
 }
@@ -225,35 +233,11 @@ p, ul {
     gap:20px;
 }
 .blue {
-    text-shadow: 2px 2px 4px #8A2BE2;
-     box-shadow: 10px 10px 14px #00E5FF;
   background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('Blue.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;   
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
 }
 
 .mango {
-    text-shadow: 2px 2px 4px #8A2BE2;
-     box-shadow: 10px 10px 14px #00E5FF;
     background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('mango.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;   
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
 }
 
  .head2 {
@@ -283,70 +267,38 @@ border: white solid 2px;
     font-style: italic;  
  }
  
- .item1 {
-    display: flex;
-    flex-direction: column ;
-    justify-content: flex-start;
- }
+
+ 
  .champagne{
-       text-shadow: 2px 2px 4px #8A2BE2;
-     box-shadow: 10px 10px 14px #00E5FF;
   background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('dd9c03a1ea2f4624f548c4abf9ebdf1a.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;   
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
+     
  }
- .vodka {
-        text-shadow: 2px 2px 4px #8A2BE2;
-     box-shadow: 10px 10px 14px #00E5FF;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('photo-1645784125144-4c06a561fc58.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;   
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
- }
- .whiskey {
-     text-shadow: 2px 2px 4px #8A2BE2;
-     box-shadow: 10px 10px 14px #00E5FF;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('6835745040_af0933dbc3_z.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;   
-     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
- }
- .tequila {
+ .card {
+        gap: 15px;
+    min-height: 600px;
       text-shadow: 2px 2px 4px #8A2BE2;
      box-shadow: 10px 10px 14px #00E5FF;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('claseazul-range.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;   
-     display: flex;
+       display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border: none;
-    border-radius: 20px; 
+    border-radius: 20px;
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    padding: 20px;
+ }
+ .vodka {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('photo-1645784125144-4c06a561fc58.avif');
+   
+ }
+ .whiskey {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('6835745040_af0933dbc3_z.jpg'); 
+ }
+ .tequila { 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.5)), url('claseazul-range.webp');
  }
 
   
@@ -367,7 +319,7 @@ border: white solid 2px;
     animation-delay: 0.1s;
 }footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(900px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: minmax(100px, auto);
     background-color: rgba(0,229,255,0.5);
 background-size: cover;
@@ -459,7 +411,7 @@ position: relative;
 }
 .menu-grid {
 display: grid;
-grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 4rem;
 position: relative;
 margin-bottom: 100px;
@@ -500,9 +452,8 @@ content: "";
 .vip {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows:repeat(auto-fit, minmax(600px, 1fr)) ;
     gap: 40px;
-    margin: 40px;
+    padding: 40px;
     margin-bottom: 100px;
 }
 .message {
@@ -594,9 +545,13 @@ footer button {
     width: 160px;
 }
 .contact {   
+    grid-column: 1 /  4;
      padding: 20px;
     background-color: rgba(138, 43, 226, 0.5);
     gap: 20px;
+}
+.footer-1 {
+grid-column: 1/ 4;
 }
 form {
     display: flex;
@@ -604,4 +559,27 @@ form {
     gap: 15px;
     max-width: 400px;
     margin: 0 auto;
+}
+@media (max-width:768px) {
+
+.order-counter {
+    top: 150px;
+    left: 10px;
+}
+
+}
+nav {
+    z-index: 999;
+}
+
+.order-counter {
+    z-index: 1001;
+}
+
+.message {
+    z-index: 1002;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }

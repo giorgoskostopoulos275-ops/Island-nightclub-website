@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>🍸Island</title>
-
+<link rel="icon" href="Logo-removebg-preview.png" type="image/png">
        <link rel="stylesheet" href="style.css">
             </head>
     <body>
@@ -21,7 +21,7 @@
     </ul>
     </div>
 
-     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+     <button class="menu-toggle" aria-label="Toggle navigation menu">
 ☰
 </button>
         </nav>
@@ -31,7 +31,7 @@
             <p>An electrifying escape surrounded by rhythm, neon, and midnight waves.
            Dance under the stars. Lose yourself in the sound.</p>
          
-<a href="#c3"><button type="button">Enter the Night</button></a>  <a href="#c3"><button type="button">Book a VIP Table</button></a>
+<a href="#c4"><button type="button">Enter the Night</button></a>  <a href="#c4"><button type="button">Book a VIP Table</button></a>
 
 
         </header>
@@ -78,7 +78,7 @@ Welcome to Island. 🌊🔥</p>
     No quiet nights.</p>
 <p>These cocktails are built for flashing lights, heavy bass, and sunrise finishes.</p>
 <div class="best item">
-    <article class="blue">
+    <article class="blue card">
 <h3>Blue Lagoon</h3>
 <p>Vodka, blue curaçao, fresh lemon, soda.
 Electric blue. Ice cold. Impossible to ignore.
@@ -90,7 +90,7 @@ Glows under the lights. Hits with the bass.</p>
  Fuel the Night 
 </button>
 </article>
-<article class="mango">
+<article class="mango card">
     <h3>🌴🔥  Pornstar Martini</h3>
     <p>Vanilla vodka, passion fruit, lime, prosecco shot.
 Sweet. Seductive. Unforgettable.
@@ -386,7 +386,7 @@ Light and refreshing between rounds.</p>
 
     <h2 class="head2">Rule The Island.</h2>
 <div class=" vip">
-<div class="champagne">
+<div class="champagne card">
    <h3>🥂Dom Pérignon  </h3>
    <p>Luxury icon. Refined bubbles for unforgettable nights.</p>
    <button type="button"  >
@@ -395,7 +395,7 @@ Light and refreshing between rounds.</p>
 </button>
 
     </div>
-    <div class="vodka item1">
+    <div class="vodka  card">
         <h3>
 🍾Belvedere </h3>
 <p>Ultra-smooth Polish vodka. Clean and sophisticated.</p>
@@ -404,7 +404,7 @@ Light and refreshing between rounds.</p>
  Fuel the Night 
 </button>
     </div>
-    <div class="tequila ">
+    <div class="tequila card">
         <h3>🥃Clase Azul Reposado </h3>
         <p>Ultra-premium tequila. Rich, smooth, unforgettable.</p>
         <button type="button">
@@ -412,7 +412,7 @@ Light and refreshing between rounds.</p>
  Fuel the Night 
 </button>
     </div>
-    <div class="whiskey item1">
+    <div class="whiskey card item1">
         <h3>
 🥃Johnnie Walker Black Label  </h3>
 <p>Deep, smoky, classic.</p>
@@ -475,11 +475,34 @@ Reset Orders
           
 
  <script>
-    function toggleMenu() {
-  document.getElementById("navlinks").classList.toggle("active");
-}
+   
+
    document.addEventListener('DOMContentLoaded', function() {
 
+      const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const orderCounter = document.querySelector(".order-counter");
+
+    menuToggle.addEventListener("click", function() {
+
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            orderCounter.style.display = "none";
+        } else {
+            orderCounter.style.display = "flex";
+        }
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function() {
+
+        navLinks.classList.remove("active");
+        orderCounter.style.display = "flex";
+
+    });
+});
     // BUTTONS
     const buttons = document.querySelectorAll('.best button, .drink button, .vip button');
     const message = document.querySelector('.message');
@@ -505,39 +528,48 @@ resetBtn.addEventListener('click', function () {
     if (count === 0) {
         document.querySelector('.order-counter').style.opacity = 0;
     }
-      
+
 });
   counter.textContent = count;
 
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
 
-            const drink =
-                button.closest('.drink,.blue,.mango,.champagne,.vodka,.tequila,.whiskey')
-                .querySelector('h3, span.drink-name')
-                .textContent;
+        const drink =
+            button.closest('.drink,.blue,.mango,.champagne,.vodka,.tequila,.whiskey')
+            .querySelector('h3, span.drink-name')
+            .textContent;
 
-            message.textContent = "Drink added: " + drink + " 🍹";
+        message.textContent = "Drink added: " + drink + " 🍹";
 
-            message.style.opacity = 1;
+        message.style.opacity = 1;
 
-            count++;
+        count++;
 
-            localStorage.setItem("orders", count);
+        localStorage.setItem("orders", count);
 
-            counter.textContent = count; 
-            
-            if (count > 0) {
-    document.querySelector('.order-counter').style.opacity = 1;
-}
-          document.querySelector('.order-counter').style.opacity = 1;
-            setTimeout(function(){
-                message.style.opacity = 0;
-            }, 2000);
+        counter.textContent = count;
 
-        });
+        button.disabled = true;
+        button.textContent = "Added!";
+
+        setTimeout(function () {
+
+            button.disabled = false;
+            button.textContent = "Order now!";
+
+        }, 2000);
+
+        if (count > 0) {
+            document.querySelector('.order-counter').style.opacity = 1;
+        }
+
+        setTimeout(function(){
+            message.style.opacity = 0;
+        }, 2500);
+
     });
-
+});
     // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]')
     .forEach(anchor => {
@@ -563,11 +595,11 @@ form.addEventListener("submit", function(e) {
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
-    const message = document.getElementById("user-message").value;
+    const userMessage = document.getElementById("user-message").value;
 
     const formMessage = document.getElementById("form-message");
 
-    if (name === "" || email === "" || message === "") {
+  if (name === "" || email === "" || userMessage === "") {
 
         formMessage.textContent = "Please fill all fields";
         formMessage.style.color = "red";
@@ -582,6 +614,7 @@ form.addEventListener("submit", function(e) {
     }
 
 });
+
    });
 
  </script>
