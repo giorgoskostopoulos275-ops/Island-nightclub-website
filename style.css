@@ -127,6 +127,9 @@ nav .links a:hover {
 }
 /* For Tablet */
 @media (max-width:768px) {
+    .card {
+        max-width: 250px;
+    }
     .nav-links {
         position: absolute;
         top:  70px;
