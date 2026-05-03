@@ -8,9 +8,11 @@ html {
 }
 body {
     background: linear-gradient(135deg, #0A0F2C, #1A1F4D, #6A0DAD);
-margin: 0;
+    margin: 0;
 }
 .about {
+      margin: 0 auto;
+    max-width: 60rem;
    margin-bottom: 100px; 
 }
 
@@ -173,7 +175,7 @@ nav .links a:hover {
     }
     p,ul {
         font-size: 1.5rem;
-    }
+}
 }
 
 
@@ -223,6 +225,8 @@ p, ul {
       font-style: italic;
 }
 .best {
+       margin: 0 auto;
+    max-width: 60rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
@@ -321,6 +325,8 @@ border: white solid 2px;
       animation: loading 1s ease;
     animation-delay: 0.1s;
 }footer {
+    margin: 0 auto;
+    max-width: 60rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: minmax(100px, auto);
@@ -403,6 +409,7 @@ footer p {
     word-spacing: 4px;
 }
 .menu {
+      
 position: relative;
 }
 .menu::before {
@@ -413,6 +420,8 @@ position: relative;
     background: rgba(0, 0, 0, 0.3);
 }
 .menu-grid {
+    margin: 0 auto;
+    max-width: 60rem;
 display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 4rem;
@@ -453,6 +462,8 @@ content: "";
 }
 
 .vip {
+    margin: 0 auto;
+    max-width: 60rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
