@@ -136,9 +136,7 @@ nav .links a:hover {
 }
 /* For Tablet */
 @media (max-width:768px) {
-    .card {
-        max-width: 250px;
-    }
+
     .nav-links {
         position: absolute;
         top:  70px;
@@ -180,19 +178,29 @@ nav .links a:hover {
     .menu-grid:before {
         display: none;
     }
-    p,ul {
-        font-size: 1.5rem;
+   .card {
+    min-height: auto;
+    padding: 20px 15px;
 }
+
 .card p {
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
+
 .card h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
+
 .best {
     grid-template-columns: 1fr;
+    padding: 15px;
 }
+
+.item {
+    flex-direction: column;
+}
+
 }
 .head {
 display: flex;
@@ -297,7 +305,7 @@ border: white solid 2px;
  }
  .card {
         gap: 15px;
-    min-height: 600px;
+    min-height: 450px;
       text-shadow: 2px 2px 4px var(--purple);
      box-shadow: 10px 10px 14px var(--cyan);
        display: flex;
